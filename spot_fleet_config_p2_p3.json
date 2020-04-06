@@ -1,0 +1,39 @@
+{
+  "TargetCapacity": 1,
+  "AllocationStrategy": "lowestPrice",
+  "IamFleetRole": "arn:aws:iam::528417098041:role/DL-Training-Spot-Fleet-Role",
+  "LaunchSpecifications": [
+      {
+          "ImageId": "ami-0027dfad6168539c7",
+          "KeyName": "ec_2_pair_1",
+          "SecurityGroups": [
+              {
+                  "GroupId": "sg-d0c8eeff"
+              }
+          ],
+          "InstanceType": "p3.2xlarge",
+          "Placement": {
+              "AvailabilityZone": "us-east-1a, us-east-1b, us-east-1c, us-east-1d"
+          },
+                  "UserData": "user_data_base64.txt",
+          "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::528417098041:instance-profile/DL-Training"
+          }
+      },
+        {
+          "ImageId": "ami-0027dfad6168539c7",
+          "KeyName": "ec_2_pair_1",
+          "SecurityGroups": [
+              {
+                  "GroupId": "sg-d0c8eeff"
+              }
+          ],
+          "InstanceType": "p2.xlarge",
+          "Placement": {
+              "AvailabilityZone": "us-east-1a, us-east-1b, us-east-1c, us-east-1d"
+          },
+                  "UserData": "user_data_base64.txt",
+          "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::528417098041:instance-profile/DL-Training"
+          }
+      }
